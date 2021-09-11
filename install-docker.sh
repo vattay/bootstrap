@@ -19,9 +19,14 @@ echo \
 
 sudo apt-get update
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io nvidia-container-toolkit
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# Works on distributions like PopOS but not Ubuntu, see install-nvidia-docker.sh
+# nvidia-container-toolkit
 
 sudo groupadd docker
 
 sudo usermod -aG docker $USER
+
+newgrp docker
 
